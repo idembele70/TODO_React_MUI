@@ -1,3 +1,12 @@
+import { Typography, Box } from "@material-ui/core";
+
 export default function Title({ children }) {
-  return <h1> {children} </h1>;
+  return (
+
+      <Box bgcolor="primary.main">
+      <Typography variant="h1" align="center">
+        {children}
+      </Typography>
+      </Box>
+  );
 }
