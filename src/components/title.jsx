@@ -1,12 +1,19 @@
-import { Typography, Box } from "@material-ui/core";
+import { Box, colors, Typography, makeStyles } from "@material-ui/core";
+
+const useStyle = makeStyles((theme) => ({
+  title: {
+    color: colors.common.white,
+  },
+}));
 
 export default function Title({ children }) {
-  return (
+  const classes = useStyle();
 
-      <Box bgcolor="primary.main">
-      <Typography variant="h1" align="center">
+  return (
+    <Box bgcolor="primary.main" p={2}>
+      <Typography variant="h5" align="center" className={classes.title}>
         {children}
       </Typography>
-      </Box>
+    </Box>
   );
 }
