@@ -1,4 +1,4 @@
-import Todo from "./Todo";
+import TodoRow from "./TodoRow";
 import { makeStyles, Box } from "@material-ui/core";
 
 const useStyles = makeStyles({
@@ -14,7 +14,7 @@ export default function Todos() {
   const { root } = useStyles();
   return (
     <Box className={root}>
-      <Todo />
+      <TodoRow />
     </Box>
   );
 }

@@ -11,8 +11,8 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Todo() {
-  const { root, iconsContainer, icons } = useStyles();
+export default function TodoRow() {
+  const { iconsContainer, icons } = useStyles();
   return (
     <>
       <Grid container justify="center" spacing={3}>
