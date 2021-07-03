@@ -1,25 +1,13 @@
 import "./App.css";
 
-function TodoInput({}) {
-  const onAddTodo = () => {
-    
-  }
-  return (
-    <>
-      <input type="text" name="todo-input" id="todo-input" autoComplete="off" />
-      <button type="submit" onClick={onAddTodo} >ADD</button>
-    </>
-  );
-}
-
-function Todos(todo) {
-  const { message } = todo;
-}
+import Title from "./components/Title";
+import AddTodo from "./components/AddTodo";
 
 function App() {
   return (
     <>
-      <TodoInput />
+      <Title>TODO APP</Title>
+      <AddTodo />
     </>
   );
 }

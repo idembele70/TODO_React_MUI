@@ -8,7 +8,6 @@ const useStyle = makeStyles((theme) => ({
 
 export default function Title({ children }) {
   const classes = useStyle();
-
   return (
     <Box bgcolor="primary.main" p={2}>
       <Typography variant="h5" align="center" className={classes.title}>

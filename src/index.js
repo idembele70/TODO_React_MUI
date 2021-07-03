@@ -3,11 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Title from "./components/title";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Title>TODO APP</Title>
     <App />
   </React.StrictMode>,
   document.getElementById("root")
