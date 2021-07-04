@@ -15,12 +15,12 @@ const todosContainer = getLocalStorage() || [];
 
 export default function Todos() {
   const { root } = useStyles();
-  const [update, setUpdate] = useState();
+  const [update, setUpdate] = useState(false);
   const handleNewTodo = (todo) => {
     todosContainer.push({ ...todo, id: todosContainer.length });
-    setUpdate(update => !update)
+    setUpdate(!update)
   };
-  useEffect(() => console.log("new todos"), [setUpdate])
+  useEffect(() => console.log(todosContainer), [update])
 
   return (
     <>
