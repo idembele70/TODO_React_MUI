@@ -1,6 +1,8 @@
 import TodoRow from "./TodoRow";
 import { makeStyles, Box } from "@material-ui/core";
-
+import AddTodo from "./AddTodo";
+import { useEffect, useState } from 'react';
+import { getLocalStorage } from "../services/todo.services";
 const useStyles = makeStyles({
   root: {
     width: 1000,
@@ -9,12 +11,23 @@ const useStyles = makeStyles({
     margin: "0 auto",
   },
 });
+const todosContainer = getLocalStorage() || [];
 
 export default function Todos() {
   const { root } = useStyles();
+  const [update, setUpdate] = useState();
+  const handleNewTodo = (todo) => {
+    todosContainer.push({ ...todo, id: todosContainer.length });
+    setUpdate(update => !update)
+  };
+  useEffect(() => console.log("new todos"), [setUpdate])
+
   return (
-    <Box className={root}>
-      <TodoRow />
-    </Box>
+    <>
+      <AddTodo onAddNewTodo={handleNewTodo} />
+      <Box className={root}>
+        <TodoRow data={todosContainer} />
+      </Box>
+    </>
   );
 }
