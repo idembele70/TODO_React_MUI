@@ -35,6 +35,8 @@ export default function AddTodo(props) {
   const onAddTodo = useCallback(() => {
     const { value } = newTodoRef.current;
     onAddNewTodo(TodoModel({ message: value, done: false, editable: false }));
+    /* TMP */
+    window.location.reload()
   }, [onAddNewTodo]);
   return (
     <Box className={newTodoContainer} boxShadow={2}>
